@@ -1,0 +1,103 @@
+---
+title: "CV Sereina Graber"
+author:
+  firstname: Sereina M.
+  lastname: Graber
+  address: "Strassennamen 12, CH-8044 Zurich, Switzerland"
+  position: "Data Scientist ・Public Health Researcher"
+  contacts:
+    - icon: fa envelope
+      text: sereina.graber@gmail.com
+      url: "mailto:sereina.graber@gmail.com"
+    - icon: assets/icon/bi-house-fill.svg
+      text: serigra.github.io
+      url: https://serigra.github.io/Webpage_Quarto/
+    - icon: fa brands github
+      text: GitHub
+      url: https://github.com/serigra
+    - icon: fa brands orcid
+      text: 0009-0005-2128-0827
+      url: https://orcid.org/0009-0005-2128-0827
+    - icon: fa brands researchgate
+      text: ResearchGate
+      url: https://www.researchgate.net/profile/Sereina-Graber
+    - icon: fa brands linkedin
+      text: LinkedIn
+      url: https://www.linkedin.com/in/sereina-maria-graber-078701bb/
+profile-photo: img/foto_SG.jpg
+format: awesomecv-typst
+---
+
+::: {.leftpanel}
+# Experience
+
+```{=typst}
+#resume-entry(
+  title: "Data Scientist & Researcher",
+  location: "Zurich, Switzerland",
+  date: "since 2019",
+  description: "Helsana Insurance Group",
+)
+
+```
+
+* some detail information
+* more detailed information
+* more detailed information
+
+```{=typst}
+#resume-entry(
+  title: "Data Scientist",
+  location: "Zurich, Switzerland",
+  date: "2017 - 2019",
+  description: "Sanitas Insurance Group",
+)
+```
+
+* some detail information
+* more detailed information
+* more detailed information
+
+# Education
+
+```{=typst}
+#resume-entry(
+  title: "Ph.D. in Evolutionary Biology",
+  location: "2017",
+  date: "",
+  description: "University of Zurich",
+)
+
+#resume-entry(
+  title: "Master of Science - Biostatistics",
+  location: "2015",
+  date: "",
+  description: "University of Zurich",
+)
+
+#resume-entry(
+  title: "Master of Science - Biology",
+  location: "2012",
+  date: "",
+  description: "University of Zurich",
+)
+```
+:::
+
+::: {.rightpanel}
+
+# Skills
+
+
+# Languages
+
+
+# References
+
+available upon request
+
+:::
+
+
+
+
