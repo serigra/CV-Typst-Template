@@ -27,6 +27,13 @@ author:
 profile-photo: img/foto_SG.jpg
 format: awesomecv-typst
 ---
+```{r}
+#| output: false
+#| echo: false
+library(tidyverse)
+```
+
+
 
 ::: {.leftpanel}
 # Experience
@@ -89,8 +96,52 @@ format: awesomecv-typst
 # Skills
 
 
+
+
+
 # Languages
 
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 1.5
+
+col.scores <- alpha("#235347", seq(0.2,1, 0.2))
+
+d.lang <- data.frame (
+  lang = rep(c('German', 'English', 'French'), each = 5),
+  score_germ = rep(c(1:5), 3),
+  binary = factor(c(rep(1, 9), 0, 1, 0,0,0,0) )
+)
+
+#dot_plot <- function() {
+  
+ d.lang |>  
+  mutate(lang = factor(lang, levels = c('French', 'English', 'German'))) |>
+  mutate(color_value = ifelse(binary == 1, score_germ / 5, NA)) |>  # New line
+  ggplot(aes(x=score_germ, y = lang, color = color_value)) +
+  geom_point(size = 7.5, stroke = NA) +
+  scale_color_gradient(low = "#23534766", high = "#235347", 
+                     limits = c(0, 1.2),  # Extend the limit slightly
+                     breaks = c(0, 1), 
+                     labels = c("0", "1"),
+                     na.value = "lightgrey") +  # Set color for binary 0
+  scale_x_continuous(expand = c(0.1,0)) +
+  xlab('') + 
+  ylab('') + 
+  theme_void() +
+  theme(text = element_text(family = "sans"),
+        axis.text.y = element_text(size = 21,
+                                   hjust = -0),
+        axis.text.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.y = element_blank(),
+        legend.position = "none")
+  
+#}
+```
 
 # References
 
