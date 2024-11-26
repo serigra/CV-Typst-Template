@@ -1,4 +1,4 @@
-#import "@preview/fontawesome:0.1.0": *
+#import "@preview/fontawesome:0.1.1": *
 
 //------------------------------------------------------------------------------
 // Style
@@ -8,8 +8,13 @@
 #let color-darknight = rgb("#131A28")
 #let color-darkgray = rgb("#333333")
 #let color-middledarkgray = rgb("#414141")
-#let color-gray = rgb("#5d5d5d")
+#let color-gray = rgb("#757575")
 #let color-lightgray = rgb("#999999")
+#let color-lightgreen = rgb("#23534799")
+#let color-mediumgreen = rgb("#235347CC")
+#let color-darkgreen = rgb("#1E4A40")
+#let color-neon = rgb("#cfff04")
+#let color-pink = rgb("#FA2FBD")
 
 // Default style
 #let color-accent-default = rgb("#235347")
@@ -45,9 +50,9 @@ $endif$
   if icon_string.starts-with("fa ") [
     #let parts = icon_string.split(" ")
     #if parts.len() == 2 {
-      fa-icon(parts.at(1), fill: color-darknight)
+      fa-icon(parts.at(1), fill: color-lightgreen)
     } else if parts.len() == 3 and parts.at(1) == "brands" {
-      fa-icon(parts.at(2), fa-set: "Brands", fill: color-darknight)
+      fa-icon(parts.at(2), fa-set: "Brands", fill: color-lightgreen)
     } else {
       assert(false, "Invalid fontawesome icon string")
     }
@@ -66,10 +71,21 @@ $endif$
 
 
 // layout utility
-#let __justify_align(left_body, right_body) = {
+#let __justify_align_1(left_body, right_body) = {
   block[
-    #box(width: 4fr)[#left_body]
-    #box(width: 1fr)[
+    #box(width: 3fr)[#left_body]
+    #box(width: 2fr)[
+      #align(right)[
+        #right_body
+      ]
+    ]
+  ]
+}
+
+#let __justify_align_2(left_body, right_body) = {
+  block[
+    #box(width: 4.8fr)[#left_body]
+    #box(width: 0.2fr)[
       #align(right)[
         #right_body
       ]
@@ -101,10 +117,10 @@ $endif$
 /// - body (content): The body of the right header
 #let secondary-right-header(body) = {
   set text(
-    size: 10pt,
+    size: 9pt,
     weight: "thin",
-    style: "italic",
-    fill: color-accent,
+    //style: "italic",
+    fill: color-lightgray,
   )
   body
 }
@@ -113,10 +129,10 @@ $endif$
 /// - body (content): The body of the right header
 #let tertiary-right-header(body) = {
   set text(
-    weight: "light",
     size: 9pt,
-    style: "italic",
-    fill: color-gray,
+    weight: "light",
+    //style: "italic",
+    fill: color-lightgray,
   )
   body
 }
@@ -126,15 +142,15 @@ $endif$
 /// - secondary (content): The secondary section of the header
 #let justified-header(primary, secondary) = {
   set block(
-    above: 0.7em,
-    below: 0.7em,
+    above: 0.9em,
+    below: 1.1em,
   )
   pad[
-    #__justify_align[
+    #__justify_align_1[
       #set text(
         size: 12pt,
         weight: "bold",
-        fill: color-darkgray,
+        fill: color-darkgreen,
       )
       #primary
     ][
@@ -147,7 +163,7 @@ $endif$
 /// - primary (content): The primary section of the header
 /// - secondary (content): The secondary section of the header
 #let secondary-justified-header(primary, secondary) = {
-  __justify_align[
+  __justify_align_2[
      #set text(
       size: 10pt,
       weight: "regular",
@@ -158,6 +174,7 @@ $endif$
     #tertiary-right-header[#secondary]
   ]
 }
+
 
 //------------------------------------------------------------------------------
 // Header (adjusted based on https://github.com/kazuyanagimoto/quarto-awesomecv-typst#readme)
@@ -231,13 +248,14 @@ $endif$
         weight: "regular",
         style: "normal",
       )
+      #set underline(stroke: color-lightgreen)
       #grid(
         columns: (1fr),
         row-gutter: 5pt,
         [
           #align(right)[
             #for contact in contacts.slice(0, half-length) [
-              #box[#parse_icon_string(contact.icon) #link(contact.url)[#contact.text]]
+              #box[#parse_icon_string(contact.icon) #underline[#link(contact.url)[#contact.text]]]
               #if contact != contacts.at(half-length - 1) [#separator]
             ]
           ]
@@ -245,7 +263,7 @@ $endif$
         [
           #align(right)[
             #for contact in contacts.slice(half-length) [
-              #box[#parse_icon_string(contact.icon) #link(contact.url)[#contact.text]]
+              #box[#parse_icon_string(contact.icon) #underline[#link(contact.url)[#contact.text]]]
               #if contact != contacts.last() [#separator]
             ]
           ]
@@ -344,7 +362,7 @@ $endif$
 
 
 //------------------------------------------------------------------------------
-// CV Entries
+// Functions for CV Entries
 //------------------------------------------------------------------------------
 
 #let resume-item(body) = {
@@ -361,13 +379,16 @@ $endif$
 
 #let resume-entry(
   title: none,
-  location: "",
   date: "",
-  description: ""
+  location: "",
+  description: "",
+  top-space: 1.8em,
+  below-space: 0.4em  
 ) = {
-  pad[
-    #justified-header(title, location)
-    #secondary-justified-header(description, date)
+  block(above: top-space)[
+    #justified-header(title, date)
+    #secondary-justified-header(description, location)
+    #v(below-space)  // Adds vertical space after second header
   ]
 }
 
@@ -450,7 +471,7 @@ $endif$
   
   show heading.where(level: 2): it => {
     set text(
-      color-middledarkgray,
+      color-accent-default, //color-middledarkgray,
       size: 12pt,
       weight: "thin"
     )
@@ -482,7 +503,8 @@ $endif$
   grid(
    
     columns: (67%, 33%),
-    inset: 5pt,
+    inset: 3pt,
+    gutter: 20pt,
     
     // Left panel --------------------------------------------------------------
     grid.cell(

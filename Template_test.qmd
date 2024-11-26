@@ -3,13 +3,13 @@ title: "CV Sereina Graber"
 author:
   firstname: Sereina M.
   lastname: Graber
-  address: "Strassennamen 12, CH-8044 Zurich, Switzerland"
-  position: "Data Scientist ・Public Health Researcher"
+  address: "Strassennamen 12, CH-8001 Zurich, Switzerland"
+  position: "PhD ・Data Scientist ・Public Health Researcher"
   contacts:
     - icon: fa envelope
       text: sereina.graber@gmail.com
       url: "mailto:sereina.graber@gmail.com"
-    - icon: assets/icon/bi-house-fill.svg
+    - icon: fa star #assets/icon/bi-house-fill.svg
       text: serigra.github.io
       url: https://serigra.github.io/Webpage_Quarto/
     - icon: fa brands github
@@ -30,7 +30,11 @@ format: awesomecv-typst
 ```{r}
 #| output: false
 #| echo: false
+
+
 library(tidyverse)
+
+source("functions.R")
 ```
 
 
@@ -41,60 +45,106 @@ library(tidyverse)
 ```{=typst}
 #resume-entry(
   title: "Data Scientist & Researcher",
-  location: "Zurich, Switzerland",
-  date: "since 2019",
-  description: "Helsana Insurance Group",
+  date: "Aug 2019 - current",
+  location: "",
+  description: "Department of Health Sciences, Helsana Insurance Group, Zurich",
 )
 
 ```
 
-* some detail information
-* more detailed information
-* more detailed information
+* Lead, conceptualize and execute scientific studies and analytical projects, e.g.: 
+  - Antibiotic pack sizes vs. guidelines ([link to study](https://link.springer.com/article/10.1007/s15010-024-02420-9){.underline})
+  - Surveillance of outpatient antibiotic prescriptions ([link to study](https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2024.29.37.2300734))
+* Data analyses and statistical programming
+  - data extraction and processing (using `SQL` and `R`)
+  - development and validation of statistical/ machine learning models \
+  (a.o.: GLM, GLMM, GEE, RF, survival analyses)
+  - visualizations (mainly using `ggplot`, `plotly`, `shiny`)
+* Present/discuss results to/with external/internal stakeholders and collaborate
+on publishing scientific publications
+* Maintenance/ development of data infrastructure (`SQL`, `Lua`) & tools (`R` pkgs)
+* Supervision of PhD student and mentoring team members
 
 ```{=typst}
 #resume-entry(
   title: "Data Scientist",
-  location: "Zurich, Switzerland",
-  date: "2017 - 2019",
-  description: "Sanitas Insurance Group",
+  date: "Aug 2017 - Jul 2019",
+  location: "",
+  description: "Advanced Analytics, Sanitas Insurance Group, Zurich",
 )
 ```
 
-* some detail information
-* more detailed information
-* more detailed information
+* Lead, design and implementation of analytical projects: Data mining &
+preparation, analyses & machine learning, preparation of results and discussion
+with internal/external stakeholders
+  - Predictive models (RF and GLM) for forecasting churn probabilities
+  - Development of a chatbot in the area of customer consulting using NLP and
+Machine Learning (in collaboration with external consultants)
+  - Health services research: effectiveness of case management
+  - Claim audit system: efficiency testing and further development of rules and
+regulations (including implementation of analysis tool in R shiny)
+* In-house consulting and teaching of statistical and analytical skills
 
-# Education
+# Academic Career
 
 ```{=typst}
 #resume-entry(
   title: "Ph.D. in Evolutionary Biology",
-  location: "2017",
-  date: "",
-  description: "University of Zurich",
+  date: "Aug 2013 - Jul 2017",
+  location: "",
+  description: "Anthropological Institute and Museum, University of Zurich",
+   top-space: 1.1em,
+  below-space: 0.3em,
 )
 
 #resume-entry(
   title: "Master of Science - Biostatistics",
-  location: "2015",
-  date: "",
-  description: "University of Zurich",
+  date: "Sept 2012 - May 2015",
+  location: "",
+  description: "Epidemiology, Biostatistics and Prevention Institute, University of Zurich",
+  top-space: 1.1em,
+  below-space: 0.3em, 
 )
 
 #resume-entry(
   title: "Master of Science - Biology",
-  location: "2012",
-  date: "",
+  date: "Sept 2010 - May 2012",
+  location: "",
+  description: "Anthropological Institute and Museum, University of Zurich",
+  top-space: 1.1em,
+  below-space: 0.3em, 
+)
+
+#resume-entry(
+  title: "Bachelor of Science - Biology",
+  date: "Sept 2007 - May 2010",
+  location: "",
   description: "University of Zurich",
+  top-space: 1.1em,
+  below-space: 0.3em, 
 )
 ```
 :::
 
 ::: {.rightpanel}
 
+# Extracurricular
+
+
+Member of the organizing committee\
+[Zurich R User Group!](https://zurich-r-user-group.github.io/)
+
 # Skills
 
+```{r}
+#| echo: false
+#| message: false
+#| fig-width: 5
+#| fig-height: 6
+
+skill_dots(skills <- c("R", "R Shiny", "Quarto", "Python", "SQL", "LaTex", "Git", "Bash/ Shell", "SPSS", "JMP", "MS Office"),
+           scores <- c(5, 4, 4, 2, 5, 3, 4, 2, 3, 3, 4) )
+```
 
 
 
@@ -103,45 +153,21 @@ library(tidyverse)
 
 ```{r}
 #| echo: false
+#| message: false
 #| fig-width: 5
 #| fig-height: 1.5
 
-col.scores <- alpha("#235347", seq(0.2,1, 0.2))
-
-d.lang <- data.frame (
-  lang = rep(c('German', 'English', 'French'), each = 5),
-  score_germ = rep(c(1:5), 3),
-  binary = factor(c(rep(1, 9), 0, 1, 0,0,0,0) )
-)
-
-#dot_plot <- function() {
-  
- d.lang |>  
-  mutate(lang = factor(lang, levels = c('French', 'English', 'German'))) |>
-  mutate(color_value = ifelse(binary == 1, score_germ / 5, NA)) |>  # New line
-  ggplot(aes(x=score_germ, y = lang, color = color_value)) +
-  geom_point(size = 7.5, stroke = NA) +
-  scale_color_gradient(low = "#23534766", high = "#235347", 
-                     limits = c(0, 1.2),  # Extend the limit slightly
-                     breaks = c(0, 1), 
-                     labels = c("0", "1"),
-                     na.value = "lightgrey") +  # Set color for binary 0
-  scale_x_continuous(expand = c(0.1,0)) +
-  xlab('') + 
-  ylab('') + 
-  theme_void() +
-  theme(text = element_text(family = "sans"),
-        axis.text.y = element_text(size = 21,
-                                   hjust = -0),
-        axis.text.x = element_blank(),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.minor.y = element_blank(),
-        panel.grid.major.y = element_blank(),
-        legend.position = "none")
-  
-#}
+skill_dots(skills <- c("German", "English", "French"),
+          scores <- c(5, 4, 1))
 ```
+
+
+# Personal Interests
+
+R programming, visualizing,\
+cycling & hiking with my dog
+
+
 
 # References
 
