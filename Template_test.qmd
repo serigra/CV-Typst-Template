@@ -3,8 +3,9 @@ title: "CV Sereina Graber"
 author:
   firstname: Sereina M.
   lastname: Graber
-  address: "Strassennamen 12, CH-8001 Zurich, Switzerland"
-  position: "PhD ・Data Scientist ・Public Health Researcher"
+  address: "Strassennamen 12, CH-8044 Zurich, Switzerland"
+  position: "PhD ・Data Scientist ・Health Researcher"
+  summary: "Proactive and creative data scientist with a strong interest in drug development and prescribing patterns, leveraging strong analytical, statistical and programming skills to drive innovative solutions and actionable insights."
   contacts:
     - icon: fa envelope
       text: sereina.graber@gmail.com
@@ -51,18 +52,18 @@ source("functions.R")
 )
 
 ```
-
 * Lead, conceptualize and execute scientific studies and analytical projects, e.g.: 
-  - Antibiotic pack sizes vs. guidelines ([link to study](https://link.springer.com/article/10.1007/s15010-024-02420-9){.underline})
-  - Surveillance of outpatient antibiotic prescriptions ([link to study](https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2024.29.37.2300734))
+  - Antibiotic pack sizes vs. guidelines ([[[link to study]{.underline}]{style="color:#23534799;"}](https://link.springer.com/article/10.1007/s15010-024-02420-9))
+  - Inappropriate drug prescribing and integrated care ([[[link to study]{.underline}]{style="color:#23534799;"}](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311099))
+* Development of automated processes to cleanse, aggregate and consolidate diverse
+"big data" sources (including `SQL` procedures and `R` software pkgs)
 * Data analyses and statistical programming
   - data extraction and processing (using `SQL` and `R`)
   - development and validation of statistical/ machine learning models \
   (a.o.: GLM, GLMM, GEE, RF, survival analyses)
   - visualizations (mainly using `ggplot`, `plotly`, `shiny`)
-* Present/discuss results to/with external/internal stakeholders and collaborate
-on publishing scientific publications
-* Maintenance/ development of data infrastructure (`SQL`, `Lua`) & tools (`R` pkgs)
+* Interpret/ present/ discuss results to/ with external/ internal stakeholders and \
+collaborate on publishing scientific publications
 * Supervision of PhD student and mentoring team members
 
 ```{=typst}
@@ -76,7 +77,7 @@ on publishing scientific publications
 
 * Lead, design and implementation of analytical projects: Data mining &
 preparation, analyses & machine learning, preparation of results and discussion
-with internal/external stakeholders
+with internal/external stakeholders, project examples:
   - Predictive models (RF and GLM) for forecasting churn probabilities
   - Development of a chatbot in the area of customer consulting using NLP and
 Machine Learning (in collaboration with external consultants)
@@ -84,6 +85,8 @@ Machine Learning (in collaboration with external consultants)
   - Claim audit system: efficiency testing and further development of rules and
 regulations (including implementation of analysis tool in R shiny)
 * In-house consulting and teaching of statistical and analytical skills
+
+
 
 # Academic Career
 

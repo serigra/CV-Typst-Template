@@ -44,6 +44,7 @@ $endif$
 // Helper functions (from https://github.com/kazuyanagimoto/quarto-awesomecv-typst#readme)
 //------------------------------------------------------------------------------
 
+
 // icon string parser
 
 #let parse_icon_string(icon_string) = {
@@ -185,7 +186,8 @@ $endif$
   lastname: "",
 ) = {
   
-  v(20pt)
+  v(5pt)
+  
     block[
       #set text(
         size: 28pt,
@@ -275,6 +277,24 @@ $endif$
 
 
 
+#let create-header-summary(
+  summary: ""
+) = {
+  set block(
+      above: 2em,
+      below: 1em,
+  )
+  set text(
+    color-accent,
+    size: 10pt,
+    //weight: "bold",
+    style: "italic",
+  )
+
+  block[#summary]
+}
+
+
 
 #let create-header-info(
   firstname: "",
@@ -282,6 +302,7 @@ $endif$
   position: "",
   address: "",
   contacts: (),
+  summary: "",
   align-header: center
 ) = {
   align(align-header)[
@@ -289,6 +310,7 @@ $endif$
     #create-header-position(position: position)
     #create-header-address(address: address)
     #create-header-contacts(contacts: contacts)
+    #create-header-summary(summary: summary)
   ]
 }
 
@@ -323,10 +345,11 @@ $endif$
   position: "",
   address: "",
   contacts: (),
+  summary: "",
   profile-photo: "",
 ) = {
 
-  v(3mm)  // Vertical space at the top of the page
+  v(0.5mm)  // Vertical space at the top of the page
   
   if profile-photo.len() > 0 {
     grid(
@@ -344,6 +367,7 @@ $endif$
           position: position,
           address: address,
           contacts: contacts,
+          summary: summary,
           align-header: right
         )
       ]
@@ -355,9 +379,12 @@ $endif$
       position: position,
       address: address,
       contacts: contacts,
+      summary: summary, 
       align-header: center
     )
   }
+  
+  v(6.5mm)  // Vertical space 
 }
 
 
@@ -433,16 +460,16 @@ $endif$
         fill: gray,
         size: 8pt,
       )
-      [
+      
         #smallcaps[
-          #author.firstname
-          #author.lastname
-          #sym.dot.c
-          CV
+          //#author.firstname
+          //#author.lastname
+          //#sym.dot.c
+          This CV is programmed using R, Quarto and Typst, code available from my github repository: https://github.com/serigra/CV-Typst-Template
         ]
-      ][
-        #counter(page).display()
-      ]
+      
+        //#counter(page).display()
+      
     ],
   )
   
@@ -493,6 +520,7 @@ $endif$
                 position: author.position,
                 address: author.address,
                 contacts: author.contacts,
+                summary: author.summary,
                 profile-photo: profile-photo,)
   
     

@@ -30,6 +30,7 @@ $if(author)$
       url: unescape_text("$it.url$"),
       icon: unescape_text("$it.icon$"),
     )$sep$, $endfor$),
+    summary: unescape_text("$author.summary$"),
   ),
 $endif$
 $if(profile-photo)$
