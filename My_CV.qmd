@@ -3,9 +3,9 @@ title: "CV Sereina Graber"
 author:
   firstname: Sereina M.
   lastname: Graber
-  address: "Strassennamen 12, CH-8044 Zurich, Switzerland"
-  position: "PhD ・Data Scientist ・Health Researcher"
-  summary: "Proactive and creative data scientist with a strong interest in drug development and prescribing patterns, leveraging strong analytical, statistical and programming skills to drive innovative solutions and actionable insights."
+  address: "Zurich, Switzerland"
+  position: "PhD ・Data Scientist ・Researcher"
+  summary: " Creative & proactive data scientist with a strong interest in cause and effects of drug usage, leveraging strong analytical and programming skills to generate actionable insights & innovative solutions that enhance patients well-being."
   contacts:
     - icon: fa envelope
       text: sereina.graber@gmail.com
@@ -46,15 +46,15 @@ source("functions.R")
 ```{=typst}
 #resume-entry(
   title: "Data Scientist & Researcher",
-  date: "Aug 2019 - current",
+  date: "90% | Aug 2019 - current",
   location: "",
-  description: "Department of Health Sciences, Helsana Insurance Group, Zurich",
+  description: "Department of Health Sciences, Helsana Ins. Group, Zurich",
 )
 
 ```
 * Lead, conceptualize and execute scientific studies and analytical projects, e.g.: 
-  - Antibiotic pack sizes vs. guidelines ([[[link to study]{.underline}]{style="color:#23534799;"}](https://link.springer.com/article/10.1007/s15010-024-02420-9))
-  - Inappropriate drug prescribing and integrated care ([[[link to study]{.underline}]{style="color:#23534799;"}](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311099))
+  - Discrepancy between antibiotic pack sizes and guidelines ([[[link to study]{.underline}]{style="color:#23534799;"}](https://link.springer.com/article/10.1007/s15010-024-02420-9))
+  - How insurance models affect inappropriate drug prescribing ([[[link to study]{.underline}]{style="color:#23534799;"}](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0311099))
 * Development of automated processes to cleanse, aggregate and consolidate diverse
 "big data" sources (including `SQL` procedures and `R` software pkgs)
 * Data analyses and statistical programming
@@ -69,22 +69,34 @@ collaborate on publishing scientific publications
 ```{=typst}
 #resume-entry(
   title: "Data Scientist",
-  date: "Aug 2017 - Jul 2019",
+  date: "100% | Aug 2017 - Jul 2019",
   location: "",
-  description: "Advanced Analytics, Sanitas Insurance Group, Zurich",
+  description: "Advanced Analytics, Sanitas Ins. Group, Zurich",
 )
 ```
 
 * Lead, design and implementation of analytical projects: Data mining &
 preparation, analyses & machine learning, preparation of results and discussion
 with internal/external stakeholders, project examples:
-  - Predictive models (RF and GLM) for forecasting churn probabilities
+  - Predictive models for forecasting churn probabilities
   - Development of a chatbot in the area of customer consulting using NLP and
 Machine Learning (in collaboration with external consultants)
-  - Health services research: effectiveness of case management
   - Claim audit system: efficiency testing and further development of rules and
 regulations (including implementation of analysis tool in R shiny)
 * In-house consulting and teaching of statistical and analytical skills
+
+```{=typst}
+#resume-entry(
+  title: "Biostatistician",
+  date: "diverse projects | Mar 2012 - Jul 2016",
+  location: "",
+  description: "Institute of Anesthesiology, University Hospital Zürich 
+Pneumology and Sleep Medicine, Cantonal Hospital Aarau",
+)
+```
+* Design, implementation of and consulting on statistics and data analyses for 
+clinical trials/ scientific publications
+
 
 
 
@@ -97,7 +109,7 @@ regulations (including implementation of analysis tool in R shiny)
   location: "",
   description: "Anthropological Institute and Museum, University of Zurich",
    top-space: 1.1em,
-  below-space: 0.3em,
+  below-space-second: 0.3em,
 )
 
 #resume-entry(
@@ -106,7 +118,7 @@ regulations (including implementation of analysis tool in R shiny)
   location: "",
   description: "Epidemiology, Biostatistics and Prevention Institute, University of Zurich",
   top-space: 1.1em,
-  below-space: 0.3em, 
+  below-space-second: 0.3em, 
 )
 
 #resume-entry(
@@ -115,7 +127,7 @@ regulations (including implementation of analysis tool in R shiny)
   location: "",
   description: "Anthropological Institute and Museum, University of Zurich",
   top-space: 1.1em,
-  below-space: 0.3em, 
+  below-space-second: 0.3em, 
 )
 
 #resume-entry(
@@ -124,7 +136,7 @@ regulations (including implementation of analysis tool in R shiny)
   location: "",
   description: "University of Zurich",
   top-space: 1.1em,
-  below-space: 0.3em, 
+  below-space-second: 0.3em, 
 )
 ```
 :::
@@ -135,7 +147,7 @@ regulations (including implementation of analysis tool in R shiny)
 
 
 Member of the organizing committee\
-[Zurich R User Group!](https://zurich-r-user-group.github.io/)
+[[[Zurich R User Group!]{.underline}]{style="color:#23534799;"}](https://zurich-r-user-group.github.io/)
 
 # Skills
 
@@ -167,8 +179,8 @@ skill_dots(skills <- c("German", "English", "French"),
 
 # Personal Interests
 
-R programming, visualizing,\
-cycling & hiking with my dog
+Programming & visualizing for fun,\
+hiking & cycling with my dog
 
 
 

@@ -71,11 +71,12 @@ $endif$
 }
 
 
-// layout utility
+// layout utility: 
+// e.g.  line with "Data Scientist" and "Aug 2017 - Jul 2019"
 #let __justify_align_1(left_body, right_body) = {
   block[
-    #box(width: 3fr)[#left_body]
-    #box(width: 2fr)[
+    #box(width: 2.7fr)[#left_body]
+    #box(width: 2.3fr)[
       #align(right)[
         #right_body
       ]
@@ -83,6 +84,7 @@ $endif$
   ]
 }
 
+// e.g. line with "Advanced Analytics, Santias Insurance Group, Zurich"
 #let __justify_align_2(left_body, right_body) = {
   block[
     #box(width: 4.8fr)[#left_body]
@@ -144,12 +146,12 @@ $endif$
 #let justified-header(primary, secondary) = {
   set block(
     above: 0.9em,
-    below: 1.1em,
+    below: 0.7em,
   )
   pad[
     #__justify_align_1[
       #set text(
-        size: 12pt,
+        size: 11pt,
         weight: "bold",
         fill: color-darkgreen,
       )
@@ -166,7 +168,7 @@ $endif$
 #let secondary-justified-header(primary, secondary) = {
   __justify_align_2[
      #set text(
-      size: 10pt,
+      size: 9.5pt,
       weight: "regular",
       fill: color-gray,
     )
@@ -185,8 +187,6 @@ $endif$
   firstname: "",
   lastname: "",
 ) = {
-  
-  v(5pt)
   
     block[
       #set text(
@@ -237,7 +237,6 @@ $endif$
 
 
 
-
 #let create-header-contacts(
   contacts: (),
 ) = {
@@ -282,11 +281,10 @@ $endif$
 ) = {
   set block(
       above: 2em,
-      below: 1em,
   )
   set text(
     color-accent,
-    size: 10pt,
+    size: 9.5pt,
     //weight: "bold",
     style: "italic",
   )
@@ -349,7 +347,7 @@ $endif$
   profile-photo: "",
 ) = {
 
-  v(0.5mm)  // Vertical space at the top of the page
+  //v(0.1mm)  // Vertical space at the top of the page
   
   if profile-photo.len() > 0 {
     grid(
@@ -384,7 +382,7 @@ $endif$
     )
   }
   
-  v(6.5mm)  // Vertical space 
+  //v(4.5mm)  // Vertical space 
 }
 
 
@@ -410,12 +408,14 @@ $endif$
   location: "",
   description: "",
   top-space: 1.8em,
-  below-space: 0.4em  
+  //below-space-first: 0em,
+  below-space-second: 0.4em  
 ) = {
   block(above: top-space)[
     #justified-header(title, date)
+    //#v(below-space-first)  // Adds vertical space after first header
     #secondary-justified-header(description, location)
-    #v(below-space)  // Adds vertical space after second header
+    #v(below-space-second)  // Adds vertical space after second header
   ]
 }
 
