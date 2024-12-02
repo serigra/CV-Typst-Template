@@ -7,6 +7,8 @@ Paul Tsouchlos’s [modern-cv](https://typst.app/universe/package/modern-cv/) in
 Additionally, I am very thankful for Aaron Schiffs' [explanation](https://github.com/quarto-dev/quarto-cli/discussions/10690)
 on how he customized his Typst format using `grid()`, which I took over for the two-column layout in my CV template.
 
+The full CV is available [here](https://serigra.github.io/Webpage_Quarto/about/files/CV.pdf).
+
 ![](example_image.png)
 
 ## Installation
