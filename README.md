@@ -1,11 +1,11 @@
 This is a CV template based on Quarto, R and Typst.
 
-Large parts of the code are borrowed from Kazuharu Yanagimoto's typst implementation
-of Byungjin Park’s LaTex implementation ([Awesome-CV](https://github.com/posquit0/Awesome-CV)), which again is inspired by
+Large parts of this code are borrowed from Kazuharu Yanagimoto's [typst implementation](https://github.com/kazuyanagimoto/quarto-awesomecv-typst/blob/main/README.md),
+which is again is based on Byungjin Park’s LaTex implementation ([Awesome-CV](https://github.com/posquit0/Awesome-CV)), which again is inspired by
 Paul Tsouchlos’s [modern-cv](https://typst.app/universe/package/modern-cv/) in typst.
 
 Additionally, I am very thankful for Aaron Schiffs' [explanation](https://github.com/quarto-dev/quarto-cli/discussions/10690)
-on how he customized his Typst format using `grid()`, which I took over for the two-column layout in my CV template.
+on how he customized his typst format using `grid()`, which I took over for the two-column layout in my CV template.
 
 ![](example_image.png)
 
@@ -69,8 +69,9 @@ See `My_CV.qmd`.
 
 ### Layout 
 
-Which content appears in which column can be set using the 
-`::: {.leftpanel}` and `::: {.rightpanel}`, which are defined in `columns.lua`.
+
+The placement of content in specific columns can be controlled using 
+`::: {.leftpanel}` and `::: {.rightpanel}`, which are configured in the `columns.lua` file.
 For more details, please see Aaron Schiffs' [explanation](https://github.com/quarto-dev/quarto-cli/discussions/10690).
 
 The the column widths are defined by `columns: (67%, 33%)` within `grid()` 
@@ -79,5 +80,5 @@ in the `# resume()` function in the `tpyst-template.typ`.
 
 ### Colors, Fonts and Font Sizes
 
-Are all defined in ``tpyst-template.typ`.
+These can all be defined in `tpyst-template.typ`.
 
