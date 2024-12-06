@@ -1,13 +1,16 @@
+
+# CV Template based on Quarto, R and Typst.
+
 This is a CV template based on Quarto, R and Typst.
 
 Large parts of this code are borrowed from Kazuharu Yanagimoto's [typst implementation](https://github.com/kazuyanagimoto/quarto-awesomecv-typst/blob/main/README.md),
-which is again is based on Byungjin Park’s LaTex implementation ([Awesome-CV](https://github.com/posquit0/Awesome-CV)), which again is inspired by
+which again is based on Byungjin Park’s LaTex implementation ([Awesome-CV](https://github.com/posquit0/Awesome-CV)), which again is inspired by
 Paul Tsouchlos’s [modern-cv](https://typst.app/universe/package/modern-cv/) in typst.
 
 Additionally, I am very thankful for Aaron Schiffs' [explanation](https://github.com/quarto-dev/quarto-cli/discussions/10690)
 on how he customized his typst format using `grid()`, which I took over for the two-column layout in my CV template.
 
-The full CV is available [here](https://serigra.github.io/Webpage_Quarto/about/files/CV.pdf).
+My full CV is available [here](https://serigra.github.io/Webpage_Quarto/about/files/CV.pdf).
 
 ![](example_image.png)
 
@@ -30,7 +33,7 @@ author:
   lastname: your last name
   address: "Zurich, Switzerland"
   position: "PhD ・Data Scientist ・Researcher"
-  summary: " Creative & proactive data scientist with a strong interest in cause and effects of drug usage, leveraging strong analytical and programming skills to generate actionable insights & innovative solutions that enhance patients well-being."
+  summary: " Creative & proactive data scientist with a strong interest in drivers and ouctomes of drug usage, leveraging strong analytical and programming skills to generate actionable insights & innovative solutions that enhance patients well-being."
   contacts:
     - icon: fa envelope
       text: your.name@gmail.com

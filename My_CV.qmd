@@ -5,7 +5,7 @@ author:
   lastname: Graber
   address: "Zurich, Switzerland"
   position: "PhD ・Data Scientist ・Researcher"
-  summary: " Creative & proactive data scientist with a strong interest in cause and effects of drug usage, leveraging strong analytical and programming skills to generate actionable insights & innovative solutions that enhance patients well-being."
+  summary: "Creative & proactive data scientist with a strong interest in drivers and outcomes of drug usage, leveraging strong analytical and programming skills to generate actionable insights & innovative solutions that enhance patients well-being."
   contacts:
     - icon: fa envelope
       text: sereina.graber@gmail.com
