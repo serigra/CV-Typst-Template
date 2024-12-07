@@ -3,7 +3,7 @@
 
 This is a CV template based on Quarto, R and Typst.
 
-Large parts of this code are borrowed from Kazuharu Yanagimoto's [typst implementation](https://github.com/kazuyanagimoto/quarto-awesomecv-typst/blob/main/README.md),
+Large parts of this code are borrowed from Kazuharu Yanagimoto's [typst implementation](https://github.com/kazuyanagimoto/quarto-awesomecv-typst),
 which again is based on Byungjin Park’s LaTex implementation ([Awesome-CV](https://github.com/posquit0/Awesome-CV)), which again is inspired by
 Paul Tsouchlos’s [modern-cv](https://typst.app/universe/package/modern-cv/) in typst.
 
