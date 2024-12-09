@@ -11,11 +11,11 @@ author:
       text: albert.einstein@example.com
       url: "mailto:albert.einstein@example.com"
     - icon: fa star #assets/icon/bi-house-fill.svg
-      text: serigra.github.io
-      url: https://serigra.github.io/Webpage_Quarto/
+      text: alberteinstein.github.io
+      url: https://github.com/
     - icon: fa brands github
       text: GitHub
-      url: https://github.com/serigra
+      url: https://github.com/
     - icon: fa brands orcid
       text: 0000-0000-0000-0000
       url: https://orcid.org/
@@ -25,7 +25,7 @@ author:
     - icon: fa brands linkedin
       text: LinkedIn
       url: https://www.linkedin.com/
-profile-photo: 
+profile-photo: img/Foto_Albert_Einstein.jpg
 format: CV-Typst-Template-typst
 ---
 ```{r}

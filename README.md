@@ -10,12 +10,20 @@ Paul Tsouchlos’s [modern-cv](https://typst.app/universe/package/modern-cv/) in
 Additionally, I am very thankful for Aaron Schiffs' [explanation](https://github.com/quarto-dev/quarto-cli/discussions/10690)
 on how he customized his typst format using `grid()`, which I took over for the two-column layout in my CV template.
 
-My full CV is available [here](https://serigra.github.io/Webpage_Quarto/about/files/CV.pdf).
+My personal CV is available [here](https://serigra.github.io/Webpage_Quarto/about/files/CV.pdf).
 
 ![](example_image.png)
 
-## Installation
+## Usage & Installation
 
+To get the whole bundle of files including the `CV_template.qmd` as well as the 
+`_exensions` folder including the style files, use the following in your terminal:
+```bash
+quarto use template serigra/CV-Typst-Template
+```
+
+
+To download only the _extensions folder itself, use the following:
 ```bash
 quarto install extension serigra/CV-Typst-Template
 ```
@@ -24,33 +32,44 @@ quarto install extension serigra/CV-Typst-Template
 
 ### Content
 
-* All the meta-data information (Name, Adress, Position, Contacts, etc.) can be set in the YAML-header of the .qmd file itself (as an example see `My_CV.qmd`).
+* All the meta-data information (Name, Adress, Position, Contacts, etc.) can be set in the YAML-header of the .qmd file itself (as an example see `CV_template.qmd`).
 ```bash
 ---
-title: "CV Your Name"
+title: "CV Albert Einstein"
 author:
-  firstname: your first name
-  lastname: your last name
-  address: "Zurich, Switzerland"
-  position: "PhD ・Data Scientist ・Researcher"
-  summary: " Creative & proactive data scientist with a strong interest in drivers and ouctomes of drug usage, leveraging strong analytical and programming skills to generate actionable insights & innovative solutions that enhance patients well-being."
+  firstname: Albert
+  lastname: Einstein
+  address: "Rämistrasse 101, Zurich, Switzerland"
+  position: "Research Physicist ・Professor"
+  summary: "Innovative Theoretical Physicist with groundbreaking contributions to the field of physics, including the development of the theory of relativity and the explanation of the photoelectric effect, showcasing exceptional analytical and problem-solving skills."
   contacts:
     - icon: fa envelope
-      text: your.name@gmail.com
-      url: "mailto:your.name@gmail.com"
+      text: albert.einstein@example.com
+      url: "mailto:albert.einstein@example.com"
 
 ..etc..
 
 ```
+
+
+* You can also add a profile image via the YAML-header as follows 
+(if no image is added, the header will be centered):
+
+```bash
+profile-photo: img/Foto_Albert_Einstein.jpg
+```
+
+
+
 * Headers and subheaders for positions and academic career entries can be set using the typst function `#resume-entry()`.
 The function is defined in `typst-template.typ` and can be used in a ` ```{=typst} `-chunk inside your .qmd file:
 
 ```{=typst}
 #resume-entry(
-  title: "Data Scientist & Researcher",
-  date: "90% | Aug 2019 - current",
+  title: "Professor of Theoretical Physics",
+  date: "100% | Jan 1914 – Sep 1933",
   location: "",
-  description: "Department of Health Sciences, Helsana Ins. Group, Zurich",
+  description: "Prussian Academy of Sciences, Berlin, Germany",
 )
 
 ```
@@ -69,7 +88,7 @@ skill_dots(skills <- c("R", "R Shiny", "Quarto", "Python", "SQL"),
            scores <- c(5, 4, 4, 2, 5) )
 ```
 
-See `My_CV.qmd`.
+See `CV_template.qmd`.
 
 
 ### Layout 
