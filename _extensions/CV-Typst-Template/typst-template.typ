@@ -72,7 +72,7 @@ $endif$
 
 
 // layout utility: 
-// e.g.  line with "Data Scientist" and "Aug 2017 - Jul 2019"
+// e.g. subtitle line with "Data Scientist" and "Aug 2017 - Jul 2019"
 #let __justify_align_1(left_body, right_body) = {
   block[
     #box(width: 2.7fr)[#left_body]
@@ -84,7 +84,7 @@ $endif$
   ]
 }
 
-// e.g. line with "Advanced Analytics, Santias Insurance Group, Zurich"
+// e.g. subtitle line with "Advanced Analytics, Santias Insurance Group, Zurich"
 #let __justify_align_2(left_body, right_body) = {
   block[
     #box(width: 4.8fr)[#left_body]
@@ -254,20 +254,16 @@ $endif$
         columns: (1fr),
         row-gutter: 5pt,
         [
-          #align(right)[
             #for contact in contacts.slice(0, half-length) [
               #box[#parse_icon_string(contact.icon) #underline[#link(contact.url)[#contact.text]]]
               #if contact != contacts.at(half-length - 1) [#separator]
             ]
-          ]
         ],
         [
-          #align(right)[
             #for contact in contacts.slice(half-length) [
               #box[#parse_icon_string(contact.icon) #underline[#link(contact.url)[#contact.text]]]
               #if contact != contacts.last() [#separator]
             ]
-          ]
         ]
       )
     ]

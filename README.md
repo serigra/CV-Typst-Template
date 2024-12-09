@@ -1,5 +1,5 @@
 
-# CV Template based on Quarto, R and Typst.
+# CV template based on Quarto, R and Typst.
 
 This is a CV template based on Quarto, R and Typst.
 

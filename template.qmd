@@ -1,0 +1,154 @@
+---
+title: "CV Albert Einstein"
+author:
+  firstname: Albert
+  lastname: Einstein
+  address: "Rämistrasse 101, Zurich, Switzerland"
+  position: "Research Physicist ・Professor"
+  summary: "Innovative Theoretical Physicist with groundbreaking contributions to the field of physics, including the development of the theory of relativity and the explanation of the photoelectric effect, showcasing exceptional analytical and problem-solving skills."
+  contacts:
+    - icon: fa envelope
+      text: albert.einstein@example.com
+      url: "mailto:albert.einstein@example.com"
+    - icon: fa star #assets/icon/bi-house-fill.svg
+      text: serigra.github.io
+      url: https://serigra.github.io/Webpage_Quarto/
+    - icon: fa brands github
+      text: GitHub
+      url: https://github.com/serigra
+    - icon: fa brands orcid
+      text: 0000-0000-0000-0000
+      url: https://orcid.org/
+    - icon: fa brands researchgate
+      text: ResearchGate
+      url: https://www.researchgate.net/
+    - icon: fa brands linkedin
+      text: LinkedIn
+      url: https://www.linkedin.com/
+profile-photo: 
+format: CV-Typst-Template-typst
+---
+```{r}
+#| output: false
+#| echo: false
+
+
+library(tidyverse)
+
+source("functions.R")
+```
+
+
+
+::: {.leftpanel}
+# Experience
+
+```{=typst}
+#resume-entry(
+  title: "Professor of Theoretical Physics",
+  date: "100% | Jan 1914 – Sep 1933",
+  location: "",
+  description: "Prussian Academy of Sciences, Berlin, Germany",
+)
+
+```
+* Developed the general theory of relativity, transforming modern physics and our understanding of gravity.
+* Published numerous papers influencing quantum mechanics and cosmology.
+* Collaborated with global scientific communities to address key theoretical challenges.
+
+```{=typst}
+#resume-entry(
+  title: "Patent Examiner",
+  date: "100% | Aug 1902 - Jul 1909",
+  location: "",
+  description: "Swiss Patent Office, Bern, Switzerland",
+)
+```
+
+* Analyzed and evaluated patent applications for electromagnetic devices, fostering innovative thought that influenced later theoretical work.
+* Balanced rigorous professional work with groundbreaking research leading to four seminal papers in 1905 (Annus Mirabilis).
+
+```{=typst}
+#resume-entry(
+  title: "Lecturer and Researcher",
+  date: "1909 – 1933",
+  location: "",
+  description: "Various Academic Institutions",
+)
+```
+* Held positions at institutions including the University of Zurich, University of Prague, and ETH Zurich.
+* Engaged in lectures and research contributing to foundational aspects of quantum theory.
+
+
+
+
+# Academic Career
+
+```{=typst}
+#resume-entry(
+  title: "PhD in Physics",
+  date: "1905",
+  location: "",
+  description: "University of Zurich",
+   top-space: 1.1em,
+  below-space-second: 0.3em,
+)
+
+#resume-entry(
+  title: "Master in Physics",
+  date: "1900",
+  location: "",
+  description: "ETH Zurich (Swiss Federal Polytechnic School)",
+  top-space: 1.1em,
+  below-space-second: 0.3em, 
+)
+
+
+```
+:::
+
+::: {.rightpanel}
+
+# Key Achievements
+
+* Awarded the Nobel Prize in Physics (1921) for the photoelectric effect, laying groundwork for quantum theory.
+* Published over 300 scientific papers and numerous non-scientific works.
+* E=mc², the most famous equation in physics, revolutionized energy and mass equivalence.
+
+# Skills
+
+```{r}
+#| echo: false
+#| message: false
+#| fig-width: 5
+#| fig-height: 6
+
+skill_dots(skills <- c("R", "R Shiny", "Quarto", "Python", "SQL", "LaTex", "Git", "Bash/ Shell", "SPSS", "JMP", "MS Office"),
+           scores <- c(5, 4, 4, 2, 5, 3, 4, 2, 3, 3, 4) )
+```
+
+
+
+
+# Languages
+
+```{r}
+#| echo: false
+#| message: false
+#| fig-width: 5
+#| fig-height: 1.5
+
+skill_dots(skills <- c("German", "English", "French"),
+          scores <- c(5, 4, 1))
+```
+
+
+# Publications
+
+available upon request
+
+:::
+
+
+
+
