@@ -190,7 +190,7 @@ $endif$
   
     block[
       #set text(
-        size: 28pt,
+        size: 17pt,
         style: "normal",
         font: (font-header),
       )
@@ -210,8 +210,8 @@ $endif$
   
   set text(
     color-accent,
-    size: 11pt,
-    weight: "bold",
+    size: 10pt,
+    //weight: "bold",
   )
     
   smallcaps[
@@ -276,11 +276,11 @@ $endif$
   summary: ""
 ) = {
   set block(
-      above: 2em,
+      above: 1.8em,
   )
   set text(
     color-accent,
-    size: 9.5pt,
+    size: 9pt,
     //weight: "bold",
     style: "italic",
   )
@@ -461,7 +461,7 @@ $endif$
           //#author.firstname
           //#author.lastname
           //#sym.dot.c
-          This CV is programmed using R, Quarto and Typst, code available from my github repository: https://github.com/serigra/CV-Typst-Template
+          This CV is built based on R, Quarto and Typst, code available from my github repository: https://github.com/serigra/CV-Typst-Template
         ]
       
         //#counter(page).display()
