@@ -1,27 +1,30 @@
 
 
-skill_dots <- function(skills, scores, text_size = 21){
+skill_dots <- function(skills, scores, max_score = 5, text_size = 21){
   
   # example
   # skill_dots(skills <- c("German", "English", "French"),
-  #           scores <- c(5, 4, 1))
+  #           scores <- c(7, 4, 1), max_score = 7)
   
   skills_v <- skills
   
   if(length(skills) != length(scores))
     stop("skills vector and scores vector have not the same length!")
   
-  df <- expand.grid(skills = skills, scores = c(1:5)) |> 
-    left_join(., tibble(skills, scores, binary = 1)) |> 
-    mutate(skills = factor(skills, levels = rev(skills_v))) |> 
-    arrange(skills) |> 
-    group_by(skills) |> 
-    fill(binary, .direction = "up") |> 
-    ungroup() |> 
+  if(max(scores) > max_score)
+    stop("one or more scores are higher than max_score!")
+  
+  df <- expand.grid(skills = skills, scores = c(1:max_score)) %>%
+    left_join(., tibble(skills, scores, binary = 1)) %>% 
+    mutate(skills = factor(skills, levels = rev(skills_v))) %>% 
+    arrange(skills) %>%
+    group_by(skills) %>% 
+    fill(binary, .direction = "up") %>% 
+    ungroup() %>%
     mutate(binary = ifelse(!is.na(binary), 1, 0))
   
-  plot <- df |>  
-    #mutate(color_value = ifelse(binary == 1, scores / 5, NA)) |>  
+  plot <- df %>% 
+    #mutate(color_value = ifelse(binary == 1, scores / max_score, NA)) %>% 
     ggplot(aes(x=scores, y = skills, color = factor(binary))) +
     geom_point(size = 7.5, stroke = NA) +
     scale_color_manual(values = c("lightgrey", "#1E4A40CC"),
