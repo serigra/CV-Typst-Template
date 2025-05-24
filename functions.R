@@ -11,9 +11,8 @@ skill_dots <- function(skills, scores, text_size = 21){
   if(length(skills) != length(scores))
     stop("skills vector and scores vector have not the same length!")
   
-  df <- expand.grid(skills = skills, scores = c(1:5)) %>% 
+  df <- expand.grid(skills = skills, scores = c(1:5)) |> 
     left_join(., tibble(skills, scores, binary = 1)) |> 
-    #tibble() %>%  
     mutate(skills = factor(skills, levels = rev(skills_v))) |> 
     arrange(skills) |> 
     group_by(skills) |> 
@@ -22,13 +21,13 @@ skill_dots <- function(skills, scores, text_size = 21){
     mutate(binary = ifelse(!is.na(binary), 1, 0))
   
   plot <- df |>  
-    #mutate(color_value = ifelse(binary == 1, scores / 5, NA)) |>  # New line
+    #mutate(color_value = ifelse(binary == 1, scores / 5, NA)) |>  
     ggplot(aes(x=scores, y = skills, color = factor(binary))) +
     geom_point(size = 7.5, stroke = NA) +
-    scale_color_manual(values = c("lightgrey", "#1E4A40CC"),  # Define specific colors for 0 and 1
+    scale_color_manual(values = c("lightgrey", "#1E4A40CC"),
                        labels = c("0", "1")) +  
     # scale_color_gradient(low = "#23534766", high = "#235347", 
-    #                      limits = c(0, 1.2),  # Extend the limit slightly
+    #                      limits = c(0, 1.2),
     #                      breaks = c(0, 1), 
     #                      labels = c("0", "1"),
     #                      na.value = "lightgrey") +  # Set color for binary 0
